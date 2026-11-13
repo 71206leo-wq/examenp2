@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Cálculo de Compra - Portal de Servicios{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card card-custom p-4">
+            <h4 class="font-weight-bold mb-3"><i class="bi bi-cart-check text-primary mr-2"></i>Cálculo de Compra</h4>
+            <form action="{{ url_for('compra') }}" method="POST">
+                <div class="form-group mb-3">
+                    <label for="cantidad" class="font-weight-bold">Cantidad de artículos:</label>
+                    <input type="number" step="any" min="1" class="form-control" id="cantidad" name="cantidad" required value="{{ resultado.cantidad if resultado and 'cantidad' in resultado else '' }}">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="precio" class="font-weight-bold">Precio unitario ($):</label>
+                    <input type="number" step="0.01" min="0" class="form-control" id="precio" name="precio" required value="{{ resultado.precio if resultado and 'precio' in resultado else '' }}">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Calcular Total</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        {% if resultado %}
+            {% if 'error' in resultado %}
+                <div class="alert alert-danger">{{ resultado.error }}</div>
+            {% else %}
+                <div class="result-box">
+                    <h5 class="font-weight-bold text-dark mb-3">Resumen de la Compra</h5>
+                    <p class="mb-1"><strong>Cantidad:</strong> {{ resultado.cantidad }}</p>
+                    <p class="mb-1"><strong>Precio Unitario:</strong> ${{ "%.2f"|format(resultado.precio) }}</p>
+                    <hr>
+                    <p class="mb-1"><strong>Subtotal:</strong> ${{ "%.2f"|format(resultado.subtotal) }}</p>
+                    <p class="mb-1 text-success">
+                        <strong>Descuento (10%):</strong> -${{ "%.2f"|format(resultado.descuento) }}
+                        {% if resultado.descuento > 0 %}<span class="badge badge-success ml-1">Aplicado</span>{% else %}<span class="badge badge-secondary ml-1">N/A (&le; $1,000)</span>{% endif %}
+                    </p>
+                    <h4 class="font-weight-bold text-primary mt-3">Total a Pagar: ${{ "%.2f"|format(resultado.total) }}</h4>
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle mr-2"></i>Ingresa la cantidad y el precio para obtener el desglose de subtotal, descuento (si aplica para compras mayores a $1,000) y total.
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

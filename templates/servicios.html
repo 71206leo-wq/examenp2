@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Servicios - Portal de Servicios{% endblock %}
+
+{% block content %}
+<div class="p-2">
+    <h2 class="font-weight-bold text-dark mb-2">Nuestros Servicios</h2>
+    <p class="text-muted mb-4">Ofrecemos soluciones digitales personalizadas para impulsar tu negocio.</p>
+
+    <div class="row">
+        <!-- Servicio 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 card-custom overflow-hidden">
+                <img src="https://picsum.photos/id/3/400/220" class="card-img-top" alt="Desarrollo Web">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Desarrollo Web a Medida</h5>
+                    <p class="card-text text-secondary">Creación de aplicaciones web responsivas utilizando Flask, Jinja2 y Bootstrap con estándares de calidad moderna.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-3">
+                    <a href="{{ url_for('contacto') }}" class="btn btn-outline-primary btn-block">Consultar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Servicio 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 card-custom overflow-hidden">
+                <img src="https://picsum.photos/id/160/400/220" class="card-img-top" alt="Consultoría Técnica">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Consultoría Técnica</h5>
+                    <p class="card-text text-secondary">Optimización de arquitectura cliente-servidor, revisión de código Python y diagramación de procesos HTTP.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-3">
+                    <a href="{{ url_for('contacto') }}" class="btn btn-outline-primary btn-block">Consultar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Servicio 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 card-custom overflow-hidden">
+                <img src="https://picsum.photos/id/119/400/220" class="card-img-top" alt="Automatización de Procesos">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Automatización de Procesos</h5>
+                    <p class="card-text text-secondary">Desarrollo de módulos interactivos de cálculo financiero y conversión de datos en tiempo real.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-3">
+                    <a href="{{ url_for('contacto') }}" class="btn btn-outline-primary btn-block">Consultar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
