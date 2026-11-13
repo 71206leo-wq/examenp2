@@ -1,10 +1,10 @@
 ## Propósito del Proyecto
-Demostrar la comprensión práctica y teórica de la arquitectura de una aplicación web cliente-servidor desarrollada con *Python* y *Flask[span_4](start_span)[span_4](end_span). El proyecto incluye una interfaz responsiva construida con **Bootstrap 4.6*, navegación unificada entre 7 páginas, y el procesamiento de tres calculadoras mediante formularios HTTP POST (Compra, Salario Semanal y Conversión de Temperatura)[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span).
+Demostrar la comprensión práctica y teórica de la arquitectura de una aplicación web cliente-servidor desarrollada con *Python* y *Flask El proyecto incluye una interfaz responsiva construida con **Bootstrap 4.6*, navegación unificada entre 7 páginas, y el procesamiento de tres calculadoras mediante formularios HTTP POST (Compra, Salario Semanal y Conversión de Temperatura)
 
 ## Requisitos para Ejecución
-- *Python 3.10* o superior instalado en el sistema[span_7](start_span)[span_7](end_span).
-- *Git* para el control de versiones[span_8](start_span)[span_8](end_span).
-- Navegador web moderno (Chrome, Firefox, Edge o Safari)[span_9](start_span)[span_9](end_span).
+- *Python 3.10* o superior instalado en el sistema
+- *Git* para el control de versiones
+- Navegador web moderno (Chrome, Firefox, Edge o Safari)
 
 ---
 
